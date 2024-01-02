@@ -59,10 +59,9 @@ body {
 }
 
 /* Card styling */
-main {
+.card {
   background-color: var(--White);
   width: 70%;
-  height: 100vh;
   margin: 50px auto;
   border-radius: 20px;
   padding: 20px;
@@ -71,7 +70,7 @@ main {
   gap: 4rem;
 }
 
-section {
+.card section {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
@@ -130,6 +129,41 @@ button {
   font-weight: bold;
 }
 
-.illus_image {
-  height: 500px;
+/* smaller card */
+.smaller_card {
+  background-color: var(--White);
+  width: 35%;
+  border-radius: 20px;
+  margin: 150px auto;
+  padding: 40px;
+}
+
+.smaller_card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 2rem;
+}
+
+.smaller_card h1 {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.smaller_card p {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.smaller_card button {
+  width: 100%;
+  background-color: var(--Tomato);
+  height: 45px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.smaller_card button:hover {
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
 }
