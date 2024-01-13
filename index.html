@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/fonts/Roboto-Bold.ttf" />
     <link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf" />
     <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
@@ -44,9 +45,18 @@
         </div>
         <div class="form_group">
           <label for="#">Email address</label>
-          <input type="email" placeholder="email@company.com" />
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email@company.com"
+          />
+          <p class="error-message">Valid email required</p>
         </div>
-        <button><a href="main.html">Subscribe to monthly newsletter</a></button>
+        <button type="submit" onclick="validateForm()">
+          Subscribe to monthly newsletter
+        </button>
       </section>
       <section>
         <img
@@ -57,11 +67,16 @@
       </section>
     </main>
 
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-
-    <!-- Success message end -->
+    <section class="success" id="success_message">
+      <img src="assets/images/icon-success.svg" alt="" />
+      <h1>Thanks for subscribing!</h1>
+      <p>
+        A confirmation email has been sent to
+        <strong id="email_placeholder"></strong> Please open it and click the
+        button inside to confirm your subscription.
+      </p>
+      <button><a href="index.html">Dismiss message</a></button>
+    </section>
 
     <div class="attribution">
       Challenge by
