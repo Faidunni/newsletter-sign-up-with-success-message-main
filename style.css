@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -43,61 +45,80 @@ h6 {
 }
 
 :root {
+  --font: "Roboto", sans-serif;
   --Dark-Slate-Grey: hsl(234, 29%, 20%);
   --Charcoal-Grey: hsl(235, 18%, 26%);
   --Grey: hsl(231, 7%, 60%);
   --White: hsl(0, 0%, 100%);
   --Tomato: hsl(4, 100%, 67%);
+  --pink: hsl(348, 100%, 66%);
 }
 
 body {
   background-color: var(--Charcoal-Grey);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  font-size: 16px;
-  font-family: "Roboto", sans-serif;
+  font: 16px var(--font);
 }
 
-/* Card styling */
-.card {
-  background-color: var(--White);
-  width: 70%;
-  margin: 50px auto;
-  border-radius: 20px;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4rem;
-}
-
-.card section {
+/* main section */
+main {
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
+  justify-content: center;
+  align-items: center;
 }
 
-.card_description {
-  font-weight: normal;
-  padding: 40px 0px 40px 40px;
+section {
+  background-color: var(--White);
+  display: flex;
+  padding: 1.5635rem;
+  margin: 6.25rem 3.125rem;
+  border-radius: 20px;
 }
 
-.card_description > p {
-  margin-bottom: 1.5rem;
+h1 {
+  font-size: 3.125rem;
 }
 
-.card_description h1 {
-  font-size: 50px;
+button {
+  border: none;
+  padding: 5px;
+  outline: none;
+  height: 40px;
+  border-radius: 5px;
+  background-color: var(--Dark-Slate-Grey);
+  color: var(--White);
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  transition: background-color 1s ease;
+}
+
+button:hover {
+  background-color: tomato;
+  background-image: linear-gradient(to right, var(--pink), var(--tomato));
+}
+
+/* SIGNUP SECTION */
+.signUp-container {
+  max-width: 58.125rem;
+  max-height: 40rem;
+}
+
+.signUp-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.875rem;
+  justify-content: center;
+  gap: 1.25rem;
 }
 
 .flex-line {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
+/* form input */
 .form_group {
   display: flex;
   flex-direction: column;
@@ -123,37 +144,29 @@ body {
   font-weight: bold;
 }
 
+/* validation */
 .error-message {
-  position: absolute;
   color: var(--Tomato);
-  font-size: 12px;
-  font-weight: bold;
-  right: 53%;
-  display: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  position: absolute;
+  right: 0.625rem;
 }
 
-button {
-  border: none;
-  padding: 5px;
-  outline: none;
-  height: 40px;
-  border-radius: 5px;
-  background-color: var(--Dark-Slate-Grey);
-  color: var(--White);
-  font-weight: bold;
+.error-input {
+  color: var(--Tomato);
+  border: 1px solid var(--Tomato);
+  background-color: hsla(4, 100%, 67%, 0.1);
 }
 
 /* smaller card */
 .success {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 35%;
-  transform: translate(-50%, -50%);
   background-color: var(--White);
+  flex-direction: column;
+  padding: 3.75rem;
+  max-width: 31.25rem;
+  gap: 1.5625rem;
   border-radius: 20px;
-  padding: 40px;
 }
 
 .success img {
@@ -186,43 +199,46 @@ button {
   box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
 }
 
-@media screen and (max-width: 650px) {
-  .card {
-    width: 90%;
-    padding: 0 0 20px 0;
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .card section {
+@media screen and (min-width: 30.0625rem) and (max-width: 48rem) {
+  body {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
+    align-items: center;
+    justify-content: center;
   }
 
-  .card_description {
-    font-weight: normal;
-    padding: 10px 20px 0px 20px;
+  main {
+    height: auto;
+    width: auto;
+    max-width: 37.5rem;
   }
 
-  .card_description > p {
-    margin-bottom: 1.5rem;
+  .signUp-container {
+    padding: 0;
+    display: flex;
+    margin: 1.875rem 0rem;
+    flex-direction: column-reverse;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    border-radius: 0;
   }
 
-  .card_description h1 {
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+  .signUp-container h1 {
+    font-size: 2.5rem;
   }
 
-  .success {
-    margin: 20px 0;
-    width: 90%;
-    height: 90%;
+  .signUp-image img {
+    width: 100vw;
+    max-width: 37.5rem;
   }
+}
+.success {
+  margin: 20px 0;
+  width: 90%;
+  height: 90%;
+}
 
-  .success button {
-    margin-top: 7rem;
-  }
+.success button {
+  margin-top: 7rem;
 }

@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/fonts/Roboto-Bold.ttf" />
     <link rel="stylesheet" href="assets/fonts/Roboto-Regular.ttf" />
     <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js"></script>
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
@@ -27,62 +26,76 @@
     </style>
   </head>
   <body>
-    <main class="card">
-      <section class="card_description">
-        <h1>Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        <div class="flex-line">
-          <img src="assets/images/icon-list.svg" alt="" />
-          <p>Product discovery and building what matters</p>
-        </div>
-        <div class="flex-line">
-          <img src="assets/images/icon-list.svg" alt="" />
-          <p>Measuring to ensure updates are a success</p>
-        </div>
-        <div class="flex-line">
-          <img src="assets/images/icon-list.svg" alt="" />
-          <p>And much more!</p>
-        </div>
-        <div class="form_group">
-          <label for="#">Email address</label>
+    <main>
+      <section class="signUp-container">
+        <div class="signUp-content">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <div class="flex-line">
+            <img src="assets/images/icon-list.svg" alt="" />
+            <p>Product discovery and building what matters</p>
+          </div>
+          <div class="flex-line">
+            <img src="assets/images/icon-list.svg" alt="" />
+            <p>Measuring to ensure updates are a success</p>
+          </div>
+          <div class="flex-line">
+            <img src="assets/images/icon-list.svg" alt="" />
+            <p>And much more!</p>
+          </div>
+          <div class="form_group">
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email@company.com"
+            />
 
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="email@company.com"
-          />
-          <p class="error-message">Valid email required</p>
+            <button type="submit" id="submit">
+              Subscribe to monthly newsletter
+            </button>
+          </div>
         </div>
-        <button type="submit" onclick="validateForm()">
-          Subscribe to monthly newsletter
-        </button>
+
+        <!-- sign-up image -->
+        <div class="signUp_image">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="assets/images/illustration-sign-up-mobile.svg"
+            />
+            <img
+              src="assets/images/illustration-sign-up-desktop.svg"
+              alt="illustration-sign-up-desktop"
+              class="illus_image"
+            />
+          </picture>
+        </div>
       </section>
-      <section>
-        <img
-          src="assets/images/illustration-sign-up-desktop.svg"
-          alt="illustration-sign-up-desktop"
-          class="illus_image"
-        />
+
+      <!-- Success message -->
+      <section class="success" id="success_message">
+        <img src="assets/images/icon-success.svg" alt="" />
+        <h1>Thanks for subscribing!</h1>
+        <p>
+          A confirmation email has been sent to
+          <strong><span id="spnEmail"></span></strong> Please open it and click
+          the button inside to confirm your subscription.
+        </p>
+        <button id="demiss">Dismiss message</button>
       </section>
     </main>
 
-    <section class="success" id="success_message">
-      <img src="assets/images/icon-success.svg" alt="" />
-      <h1>Thanks for subscribing!</h1>
-      <p>
-        A confirmation email has been sent to
-        <strong id="email_placeholder"></strong> Please open it and click the
-        button inside to confirm your subscription.
-      </p>
-      <button><a href="index.html">Dismiss message</a></button>
-    </section>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </footer>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    <script src="script.js"></script>
   </body>
 </html>
