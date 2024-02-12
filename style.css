@@ -50,8 +50,8 @@ h6 {
   --Charcoal-Grey: hsl(235, 18%, 26%);
   --Grey: hsl(231, 7%, 60%);
   --White: hsl(0, 0%, 100%);
-  --Tomato: hsl(4, 100%, 67%);
-  --pink: hsl(348, 100%, 66%);
+  --Tomato: #ff6257;
+  --pink: #ff5274;
 }
 
 body {
@@ -145,12 +145,12 @@ button:hover {
 }
 
 /* validation */
-.error-message {
+.text {
   color: var(--Tomato);
   font-size: 0.75rem;
   font-weight: 700;
   position: absolute;
-  right: 0.625rem;
+  right: 50%;
 }
 
 .error-input {
@@ -161,18 +161,26 @@ button:hover {
 
 /* smaller card */
 .success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: var(--White);
   flex-direction: column;
   padding: 3.75rem;
   max-width: 31.25rem;
-  gap: 1.5625rem;
   border-radius: 20px;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
 }
 
 .success img {
   width: 50px;
   height: 50px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .success h1 {
@@ -184,7 +192,6 @@ button:hover {
 
 .success p {
   margin-top: 1rem;
-  margin-bottom: 2rem;
 }
 
 .success button {
@@ -193,6 +200,7 @@ button:hover {
   height: 45px;
   transition: 0.5s;
   cursor: pointer;
+  padding: 15px;
 }
 
 .success button:hover {
@@ -232,7 +240,12 @@ button:hover {
     width: 100vw;
     max-width: 37.5rem;
   }
+
+  .text {
+    right: 15%;
+  }
 }
+
 .success {
   margin: 20px 0;
   width: 90%;
