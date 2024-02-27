@@ -27,6 +27,7 @@ closeSuccessMessage.addEventListener("click", function () {
   emailInput.style.borderColor = "";
   errorMessage.textContent = "";
   emailInput.value = "";
+  emailInput.style.backgroundColor = "";
 });
 // const errorMessage = document.querySelector(".text");
 // const btnSubmit = document.getElementById("submit");
